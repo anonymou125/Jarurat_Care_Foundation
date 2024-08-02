@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  height: 100vh;
+  width: 100%;
+}
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  background-color: rgb(229, 231, 235);
+  color: #000;
+  width: 100%;
+  height: 4.5vw;
+  z-index: 10;
+  user-select: none;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 4.1vw;
+  height: 4.1vw;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 1.07vw;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  gap: 3vw;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-size: 1.07vw;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 3px;
+}
+.menu a:before {
+  content: "";
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  border-radius: 5px;
+  left: 0;
+  background-color: rgb(55, 99, 100);
+  position: absolute;
+  transition: all ease 0.2s;
+}
+.menu a:hover:before {
+  width: 100%;
+}
+
+.menu a:hover {
+  color: rgb(55, 99, 100);
+}
+
+.whatsapp-button {
+  margin-left: 20px;
+  padding: 10px 20px;
+  border: 2px solid #25d366;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1.07vw;
+}
+
+.whatsapp-button:hover {
+  background-color: #25d366;
+  color: #000;
+}
+
+/* Menu Icon Styles */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-icon div {
+  background-color: #000;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  /* display: none; */
+}
+
+.full-screen-menu {
+  transform: translateX(-100%);
+  position: fixed;
+  bottom: 0; /* Position the full-screen menu below the navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 7vw); /* Full height minus navbar height */
+  background-color: rgba(0, 0, 0, 0.9);
+  flex-direction: column;
+  transition: all ease 0.2s;
+  align-items: center;
+  justify-content: start;
+  z-index: 10;
+}
+
+.full-screen-menu ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.full-screen-menu li {
+  margin: 40px 0;
+}
+
+.full-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 3.9vw;
+  transition: color 0.3s ease;
+}
+
+.full-menu a:hover {
+  color: #00bfff;
+}
+
+.full-whatsapp-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 3.7vw;
+}
+
+.full-whatsapp-button:hover {
+  background-color: lightblue;
+}
+
+.content_sections {
+  margin-top: 4.5vw;
+  background: gray;
+  width: 100%;
+  text-transform: uppercase;
+}
+section .content_box {
+  height: 20vw;
+  width: 71vw;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  border-top-right-radius: 53px;
+  border-bottom-left-radius: 53px;
+}
+/* for section 2 */
+.section2 {
+  height: calc(100vh - 4.5vw);
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  flex-direction: column;
+  align-items: center;
+}
+.section2 .text {
+  font-size: 1.5vw;
+  text-align: center;
+  color: blue;
+}
+.section3 {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  flex-direction: column;
+  align-items: center;
+}
+.section4 {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  flex-direction: column;
+  align-items: center;
+}
+.section5 {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    height: 7vw;
+    padding: 0 50px;
+  }
+  .title {
+    font-size: 3vw;
+  }
+
+  .logo {
+    height: 7vw;
+    width: 7vw;
+  }
+  .menu,
+  .whatsapp-button {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .full-screen-menu.active {
+    display: flex;
+    transform: translateX(0%);
+  }
+  .full-screen-menu.deactive {
+    transform: translateX(-100%);
+  }
+  .content_sections section {
+    font-size: 4.2vw;
+    text-align: center;
+  }
+  .content_sections .section2 .text {
+    margin-top: 3vw;
+    padding: 0 2vw;
+    font-size: 2.9vw;
+  }
+  section .content_box {
+    height: 54vw;
+  }
+}
